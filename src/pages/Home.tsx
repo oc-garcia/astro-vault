@@ -1,46 +1,25 @@
-import { useEffect, useState } from "react";
-import { fetchApod } from "../services/fetchApod";
-interface Iapod {
-  copyright: string;
-  date: Date;
-  explanation: string;
-  hdurl: string;
-  media_type: string;
-  service_version: string;
-  title: string;
-  url: string;
-}
-
+import { Link } from "react-router-dom";
 export default function Home() {
-  const [data, setData] = useState<Iapod>();
-  const handleData = async () => {
-    const apod = await fetchApod();
-    setData(apod);
-  };
-  useEffect(() => {
-    handleData();
-  }, []);
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
-
-  const handleDate = (prmt: Date) => {
-    return new Date(prmt).toLocaleDateString();
-  };
-
   return (
-    <main className="bg-slate-700 p-4 text-gray-50">
-      <section className="flex flex-col items-center justify-center gap-1">
-        <h2 className="font-bold text-xl">Astronomy Picture of the Day</h2>
-        {data != undefined && (
-          <>
-            <p>{handleDate(data.date)}</p>
-            <h3 className="font-bold">{data.title}</h3>
-            <img src={data.hdurl} alt={data.title} />
-            <p className="text-justify">{data.explanation}</p>
-            <p className="text-xs mt-2">Image taken by {data.copyright} &copy;</p>
-          </>
-        )}
+    <main className="bg-slate-700 p-4 text-gray-50 flex flex-col items-center justify-center">
+      <section className="flex flex-col gap-1 container">
+        <p className="text-justify">
+          Welcome to Astro Vault, your NASA API-powered UI for exploring the cosmos. Dive into a wealth of data and
+          imagery from NASA's archives, seamlessly accessed through our sleek web application.
+        </p>
+        <h2 className="text-left self-start	font-bold mt-2">Check out available API's:</h2>
+        <ul className="self-start">
+          <Link to="/apod">
+            <li className="hover:bg-slate-900 bg-slate-800 ml-2 list-none cursor-pointer border-solid border-2	border-cyan-700 hover:border-violet-600 rounded p-4 font-bold transition-all">
+              Apod (Astronomy Picture of the Day)
+            </li>
+          </Link>
+          <Link to="/marsrovers">
+            <li className="hover:bg-slate-900 bg-slate-800 ml-2 mt-2 list-none cursor-pointer border-solid border-2 border-cyan-700 hover:border-violet-600 rounded p-4 font-bold transition-all">
+              Mars Rovers
+            </li>
+          </Link>
+        </ul>
       </section>
     </main>
   );

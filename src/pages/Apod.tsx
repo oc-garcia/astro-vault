@@ -2,20 +2,21 @@ import { useEffect, useState } from "react";
 import { fetchApod } from "../services/fetchApod";
 import { Iapod } from "../types/Iapod";
 
-
 export default function Apod() {
   const [data, setData] = useState<Iapod>();
+
   const handleData = async () => {
     const apod = await fetchApod();
     setData(apod);
   };
-  useEffect(() => {
-    handleData();
-  }, []);
 
   const handleDate = (prmt: Date) => {
     return new Date(prmt).toLocaleDateString();
   };
+
+  useEffect(() => {
+    handleData();
+  }, []);
 
   return (
     <main className="bg-slate-700 p-4 text-gray-50 flex flex-col items-center justify-center gap-1">

@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { fetchApod } from "../services/fetchApod";
 
+interface Idate {
+  stringToDate: string
+}
 interface Iapod {
   copyright: string;
-  date: string;
+  date: Idate;
   explanation: string;
   hdurl: string;
   media_type: string;
@@ -24,13 +27,16 @@ export default function Home() {
   useEffect(() => {
     console.log(data);
   }, [data]);
+
+  const stringToDate: string = data?.date.stringToDate ? new Date(data.date.stringToDate).toLocaleDateString() : "";
+
   return (
     <main className="bg-slate-700 p-4 text-gray-50">
       <section className="flex flex-col items-center justify-center gap-1">
         <h2 className="font-bold text-xl">Astronomy Picture of the Day</h2>
         {data != undefined && (
           <>
-            <p>{data.date}</p>
+            <p>{stringToDate}</p>
             <h3 className="font-bold">{data.title}</h3>
             <img src={data.hdurl} alt={data.title} />
             <p className="text-justify">{data.explanation}</p>

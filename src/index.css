@@ -2,14 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: rgb(2 6 23);
+  --secondary: rgb(14 116 144);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--primary);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--primary);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+  border: 3px solid var(--primary);
 }
 
 body {
   font-family: "Barlow Semi Condensed", sans-serif;
   font-family: "Source Code Pro", monospace;
   background-color: rgb(51 65 85);
+}
+
+main {
+  min-height: 85vh;
 }

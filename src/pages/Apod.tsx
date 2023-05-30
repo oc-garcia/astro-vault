@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { fetchApod } from "../services/fetchApod";
-import { Iapod } from "../types/Iapod";
+import { IApod } from "../types/Iapod";
 import { handleDate } from "../services/handleDate";
 
 export default function Apod() {
-  const [data, setData] = useState<Iapod>();
+  const [data, setData] = useState<IApod>();
 
   const handleData = async () => {
     const apod = await fetchApod();

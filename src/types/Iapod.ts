@@ -1,4 +1,4 @@
-export interface Iapod {
+export interface IApod {
   copyright: string;
   date: Date;
   explanation: string;

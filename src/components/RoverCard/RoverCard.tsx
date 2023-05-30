@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { handleDate } from "../../services/handleDate";
 import { handleNumberFormat } from "../../services/handleNumberFormat";
 import { IManifest } from "../../types/IManifest";

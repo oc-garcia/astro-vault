@@ -47,6 +47,8 @@ export default function MarsRovers() {
     handleDataManifest("spirit");
   }, []);
 
+  console.log(data);
+
   return (
     <section className="bg-slate-700 p-4 text-gray-50 flex flex-col items-center justify-center gap-1">
       <h2 className="text-left self-start	font-bold mt-2">Pick a rover to see latest photos:</h2>

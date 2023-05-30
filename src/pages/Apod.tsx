@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchApod } from "../services/fetchApod";
 import { Iapod } from "../types/Iapod";
+import { handleDate } from "../services/handleDate";
 
 export default function Apod() {
   const [data, setData] = useState<Iapod>();
@@ -8,10 +9,6 @@ export default function Apod() {
   const handleData = async () => {
     const apod = await fetchApod();
     setData(apod);
-  };
-
-  const handleDate = (prmt: Date) => {
-    return new Date(prmt).toLocaleDateString();
   };
 
   useEffect(() => {

@@ -72,7 +72,6 @@ export default function MarsRovers() {
     }
   }, [perseverance, curiosity, opportunity, spirit]);
 
-  console.log(data);
   if (!focus.status) {
     return (
       <section className="bg-slate-700 p-4 text-gray-50 flex flex-col items-center justify-center gap-1">
@@ -140,11 +139,11 @@ export default function MarsRovers() {
         </div>
         <ul className="self-start container flex flex-wrap justify-center items-center gap-4">
           {data != undefined &&
-            data.latest_photos.map((photo) => (
-              <li>
+            data.latest_photos.map((photo, index) => (
+              <li key={index}>
                 <p>Date of photo: {handleDate(photo.earth_date)}</p>
-                <p>Camera used: {photo.camera.name}</p>
-                <img className="border-none min-w-100 min-h-100" src={photo.img_src} alt="" />
+                <p>Camera: {photo.camera.full_name}</p>
+                <img className="border-none min-w-100 min-h-100" src={photo.img_src} alt="Rover img from mars" />
               </li>
             ))}
         </ul>

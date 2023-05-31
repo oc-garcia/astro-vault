@@ -19,6 +19,11 @@ export default function Home() {
             Mars Rovers
           </li>
         </Link>
+        <Link to="/asteroids">
+          <li className="hover:bg-slate-900 bg-slate-800 ml-2 mt-2 list-none cursor-pointer border-solid border-2 border-blue-700 hover:border-red-600 rounded p-4 font-bold transition-all">
+            Asteroids (NeoWs)
+          </li>
+        </Link>
       </ul>
     </section>
   );

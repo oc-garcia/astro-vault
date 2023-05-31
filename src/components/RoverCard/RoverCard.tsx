@@ -5,7 +5,6 @@ import { IManifest } from "../../types/IManifest";
 interface IroverCard {
   rover: IManifest;
   onclick: () => void;
-  roverString: string;
 }
 
 export default function RoverCard({ rover, onclick }: IroverCard) {

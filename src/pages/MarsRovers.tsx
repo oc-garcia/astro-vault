@@ -53,34 +53,38 @@ export default function MarsRovers() {
     <section className="bg-slate-700 p-4 text-gray-50 flex flex-col items-center justify-center gap-1">
       <h2 className="text-left self-start	font-bold mt-2">Pick a rover to see latest photos:</h2>
       <ul className="self-start">
-        <RoverCard
-          roverString="perseverance"
-          rover={perseverance}
-          onclick={() => {
-            handleDataLatest("perseverance");
-          }}
-        />
-        <RoverCard
-          roverString="curiosity"
-          rover={curiosity}
-          onclick={() => {
-            handleDataLatest("curiosity");
-          }}
-        />
-        <RoverCard
-          roverString="opportunity"
-          rover={opportunity}
-          onclick={() => {
-            handleDataLatest("opportunity");
-          }}
-        />
-        <RoverCard
-          roverString="spirit"
-          rover={spirit}
-          onclick={() => {
-            handleDataLatest("spirit");
-          }}
-        />
+        {perseverance.photo_manifest?.name === "Perseverance" && (
+          <RoverCard
+            rover={perseverance}
+            onclick={() => {
+              handleDataLatest("perseverance");
+            }}
+          />
+        )}
+        {curiosity.photo_manifest?.name === "Curiosity" && (
+          <RoverCard
+            rover={curiosity}
+            onclick={() => {
+              handleDataLatest("curiosity");
+            }}
+          />
+        )}
+        {opportunity.photo_manifest?.name === "Opportunity" && (
+          <RoverCard
+            rover={opportunity}
+            onclick={() => {
+              handleDataLatest("opportunity");
+            }}
+          />
+        )}
+        {spirit.photo_manifest?.name === "Spirit" && (
+          <RoverCard
+            rover={spirit}
+            onclick={() => {
+              handleDataLatest("spirit");
+            }}
+          />
+        )}
       </ul>
     </section>
   );

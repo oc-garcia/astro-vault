@@ -150,5 +150,7 @@ export default function MarsRovers() {
         </ul>
       </section>
     );
+  } else {
+    return <h2>An Error has ocurred.</h2>;
   }
 }

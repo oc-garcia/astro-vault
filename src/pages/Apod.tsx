@@ -15,6 +15,8 @@ export default function Apod() {
     handleData();
   }, []);
 
+  console.log(data);
+
   return (
     <main className="bg-slate-700 p-4 text-gray-50 flex flex-col items-center justify-center gap-1">
       <section className="flex flex-col items-center justify-center gap-1 container">
@@ -23,9 +25,12 @@ export default function Apod() {
           <>
             <p>{handleDate(data.date)}</p>
             <h3 className="font-bold">{data.title}</h3>
-            <img src={data.hdurl} alt={data.title} />
+            {data.media_type === "photo" && <img src={data.hdurl} alt={data.title} />}
+            {data.media_type === "video" && (
+              <iframe className="h-screen	" width="100%" height="100%" src={data.url}></iframe>
+            )}
             <p className="text-justify">{data.explanation}</p>
-            <p className="text-xs mt-2">Image taken by {data.copyright} &copy;</p>
+            {data.copyright && <p className="text-xs mt-2">Image taken by {data.copyright} &copy;</p>}
           </>
         )}
       </section>

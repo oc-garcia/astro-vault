@@ -4,7 +4,7 @@ export default function Footer() {
       <a className="flex justify-center items-center" href="https://github.com/oc-garcia" target="_blank">
         <p className="text-gray-50">Made by Octávio Garcia. 2023.</p>
         <svg
-          className="fill-cyan-700 h-10 ml-4 hover:fill-violet-600"
+          className="fill-blue-700 h-10 ml-4"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"

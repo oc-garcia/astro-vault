@@ -10,12 +10,12 @@ export default function Home() {
       <h2 className="text-left self-start	font-bold mt-2">Check out available API's:</h2>
       <ul className="self-start">
         <Link to="/apod">
-          <li className="hover:bg-slate-900 bg-slate-800 ml-2 list-none cursor-pointer border-solid border-2	border-cyan-700 hover:border-violet-600 rounded p-4 font-bold transition-all">
+          <li className="hover:bg-slate-900 bg-slate-800 ml-2 list-none cursor-pointer border-solid border-2 border-blue-700 hover:border-red-600 rounded p-4 font-bold transition-all">
             Apod (Astronomy Picture of the Day)
           </li>
         </Link>
         <Link to="/marsrovers">
-          <li className="hover:bg-slate-900 bg-slate-800 ml-2 mt-2 list-none cursor-pointer border-solid border-2 border-cyan-700 hover:border-violet-600 rounded p-4 font-bold transition-all">
+          <li className="hover:bg-slate-900 bg-slate-800 ml-2 mt-2 list-none cursor-pointer border-solid border-2 border-blue-700 hover:border-red-600 rounded p-4 font-bold transition-all">
             Mars Rovers
           </li>
         </Link>

@@ -7,7 +7,7 @@ export default function Header() {
       <Link to="/">
         <img className="w-28" src={nasaIcon} alt="Nasa Icon" />
       </Link>
-      <h1 className="text-gray-50 font-bold	text-3xl">{`{ API's }`}</h1>
+      <h1 className="text-gray-50 font-bold	text-3xl">{`{ APIs }`}</h1>
     </header>
   );
 }

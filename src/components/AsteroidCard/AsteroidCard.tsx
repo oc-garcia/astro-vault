@@ -3,7 +3,6 @@ import { handleNumberFormat } from "../../services/handleNumberFormat";
 import { IAsteroid } from "../../types/IAsteroid";
 
 export default function AsteroidCard({ asteroid }: IAsteroid) {
-  console.log(asteroid)
   return (
     <li className="hover:scale-110 hover:bg-slate-900 bg-slate-800 list-none border-solid border-2 border-blue-700 rounded p-4 transition-all ">
       <h3>Name: {asteroid?.name}</h3>

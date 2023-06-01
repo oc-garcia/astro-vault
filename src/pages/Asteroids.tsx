@@ -39,10 +39,8 @@ export default function Asteroids() {
   const handleData = async () => {
     const neows = await fetchNeows();
     const firstPropertie = Object.keys(neows.near_earth_objects);
-    setAsteroids(neows.near_earth_objects[`${firstPropertie}`]);
+    setAsteroids(() => neows["near_earth_objects"][`${firstPropertie}`].map((data: IAsteroid) => ({ asteroid: data })));
   };
-
-  console.log(asteroids);
 
   useEffect(() => {
     handleData();

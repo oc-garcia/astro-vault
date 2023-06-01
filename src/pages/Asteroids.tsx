@@ -1,8 +1,4 @@
-import React from 'react'
-
-type Props = {}
-
-export default function Asteroids({}: Props) {
+export default function Asteroids() {
   return (
     <div>Asteroids</div>
   )

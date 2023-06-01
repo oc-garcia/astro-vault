@@ -52,4 +52,3 @@ export default function AsteroidCard({ asteroid }: IAsteroid) {
   );
 }
 
-//'2023-05-01'  "2023-06-01'

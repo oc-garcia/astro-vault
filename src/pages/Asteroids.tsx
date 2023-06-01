@@ -43,6 +43,7 @@ export default function Asteroids() {
   };
 
   console.log(asteroids);
+
   useEffect(() => {
     handleData();
   }, []);

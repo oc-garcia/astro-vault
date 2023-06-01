@@ -76,7 +76,7 @@ export default function MarsRovers() {
     return (
       <section className="bg-slate-700 p-4 text-gray-50 flex flex-col items-center justify-center gap-1">
         <h2 className="text-left self-start	font-bold mt-2">Pick a rover to see latest photos:</h2>
-        <ul className="self-start container flex flex-wrap justify-center items-center gap-2	">
+        <ul className="self-start container flex flex-wrap justify-center items-center gap-2">
           {isLoading ? (
             <RoverCard
               rover={perseverance}

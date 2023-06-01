@@ -21,6 +21,8 @@ export default function Apod() {
     handleData();
   }, []);
 
+  console.log(data);
+
   return (
     <section className="bg-slate-700 p-4 text-gray-50 flex flex-col items-center justify-center gap-1 container">
       {data != undefined && (
@@ -28,7 +30,7 @@ export default function Apod() {
           <h2 className="font-bold text-xl">Astronomy Picture of the Day</h2>
           <p>{handleDate(data.date)}</p>
           <h3 className="font-bold">{data.title}</h3>
-          {data.media_type === "photo" && <img src={data.hdurl} alt={data.title} />}
+          {data.media_type === "image" && <img src={data.hdurl} alt={data.title} />}
           {data.media_type === "video" && (
             <iframe className="aspect-video" width="100%" height="100%" src={data.url}></iframe>
           )}

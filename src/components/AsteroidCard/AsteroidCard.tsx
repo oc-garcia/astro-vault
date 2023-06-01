@@ -1,8 +1,32 @@
 import { handleDate } from "../../services/handleDate";
 import { handleNumberFormat } from "../../services/handleNumberFormat";
-import { IAsteroid } from "../../types/IAsteroid";
 
-export default function AsteroidCard({ asteroid }: IAsteroid) {
+interface IAsteroidCard {
+  name: string;
+  absolute_magnitude_h: number;
+  is_potentially_hazardous_asteroid: boolean;
+  is_sentry_object: boolean;
+  estimated_diameter: {
+    kilometers: {
+      estimated_diameter_max: number;
+      estimated_diameter_min: number;
+    };
+  };
+  close_approach_data: [
+    {
+      close_approach_date: string;
+      miss_distance: {
+        kilometers: number;
+      };
+      orbiting_body: string;
+      relative_velocity: {
+        kilometers_per_hour: number;
+      };
+    }
+  ];
+}
+
+export default function AsteroidCard( asteroid : IAsteroidCard) {
   return (
     <li className="hover:scale-110 hover:bg-slate-900 bg-slate-800 list-none border-solid border-2 border-blue-700 rounded p-4 transition-all ">
       <h3>Name: {asteroid?.name}</h3>

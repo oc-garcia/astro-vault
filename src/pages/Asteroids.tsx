@@ -4,32 +4,34 @@ import AsteroidCard from "../components/AsteroidCard/AsteroidCard";
 import { IAsteroid } from "../types/IAsteroid";
 import Loader from "../components/Loader/Loader";
 
-const defaultValue: IAsteroid[] = {
-  asteroid: {
-    name: "string",
-    absolute_magnitude_h: 0,
-    is_potentially_hazardous_asteroid: false,
-    is_sentry_object: false,
-    estimated_diameter: {
-      kilometers: {
-        estimated_diameter_max: 0,
-        estimated_diameter_min: 0,
+const defaultValue: IAsteroid[] = [
+  {
+    asteroid: {
+      name: "",
+      absolute_magnitude_h: 0,
+      is_potentially_hazardous_asteroid: false,
+      is_sentry_object: false,
+      estimated_diameter: {
+        kilometers: {
+          estimated_diameter_max: 0,
+          estimated_diameter_min: 0,
+        },
       },
+      close_approach_data: [
+        {
+          close_approach_date: "",
+          miss_distance: {
+            kilometers: 0,
+          },
+          orbiting_body: "",
+          relative_velocity: {
+            kilometers_per_hour: 0,
+          },
+        },
+      ],
     },
-    close_approach_data: [
-      {
-        close_approach_date: "",
-        miss_distance: {
-          kilometers: 0,
-        },
-        orbiting_body: "",
-        relative_velocity: {
-          kilometers_per_hour: 0,
-        },
-      },
-    ],
   },
-};
+];
 
 export default function Asteroids() {
   const [data, setData] = useState(defaultValue);

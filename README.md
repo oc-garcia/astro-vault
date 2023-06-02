@@ -44,3 +44,6 @@ Contributions are welcome! If you would like to improve this project or add new 
 ## Acknowledgments
 
 Astro Vault was developed by Octávio Garcia as a personal passion project for astronomy. Special thanks to NASA for providing amazing APIs and content that made this project possible.
+
+## Project Image
+![](./public/Captura%20de%20tela%20de%202023-06-01%2021-43-25.png#vitrinedev)

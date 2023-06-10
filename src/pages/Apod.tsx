@@ -5,21 +5,21 @@ import { handleDate } from "../services/handleDate";
 
 export default function Apod() {
   const [data, setData] = useState<IApod>();
-  const [error, setError] = useState<boolean>(false);
 
   const handleData = async () => {
     try {
       const apod = await fetchApod();
       setData(apod);
-      setError(false);
     } catch (error) {
-      setError(true);
+      console.error(error);
     }
   };
 
   useEffect(() => {
     handleData();
   }, []);
+
+  console.log(data);
 
   return (
     <section className="bg-slate-700 p-4 text-gray-50 flex flex-col items-center justify-center gap-1 container">
@@ -36,10 +36,11 @@ export default function Apod() {
           {data.copyright && <p className="text-xs mt-2">Image taken by {data.copyright} &copy;</p>}
         </>
       )}
-      {error && (
+      {data == undefined && (
         <>
-          <h2>Error</h2>
-          <p>Looks like too many requisitions where made to the API, we need to wait for NASA's cooldown.</p>
+          <h2 className="font-bold text-xl">Oh No!</h2>
+          <p className="text-center">Looks like there is a problem with the API.</p>
+          <p>Check again later!</p>
         </>
       )}
     </section>

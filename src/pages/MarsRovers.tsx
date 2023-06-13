@@ -143,7 +143,12 @@ export default function MarsRovers() {
               <li key={index}>
                 <p>Date of photo: {handleDate(photo.earth_date)}</p>
                 <p>Camera: {photo.camera.full_name}</p>
-                <img className="border-none min-w-100 min-h-100" src={photo.img_src} alt="Rover img from mars" />
+                <img
+                  className="border-none min-w-100 min-h-100"
+                  src={photo.img_src}
+                  alt="Rover img from mars"
+                  loading="lazy"
+                />
               </li>
             ))}
         </ul>

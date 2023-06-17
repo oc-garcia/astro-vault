@@ -1,9 +1,6 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
-type Props = {};
-
-export default function NotFound({}: Props) {
+export default function NotFound() {
   return (
     <section className="bg-slate-700 p-4 text-gray-50 flex flex-col items-center justify-center gap-10">
       <h1 className="font-bold text-9xl">404</h1>

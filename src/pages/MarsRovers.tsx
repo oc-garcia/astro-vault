@@ -76,7 +76,7 @@ export default function MarsRovers() {
     return (
       <section className="bg-slate-700 p-4 text-gray-50 flex flex-col items-center justify-center gap-1">
         <h2 className="text-left self-start	font-bold mt-2">Pick a rover to see latest photos:</h2>
-        <ul className="self-start container flex flex-wrap justify-center items-center gap-2">
+        <ul className="self-start flex flex-wrap justify-center items-center gap-2">
           {isLoading ? (
             <RoverCard
               rover={perseverance}
@@ -124,8 +124,8 @@ export default function MarsRovers() {
 
   if (focus.status) {
     return (
-      <section className="bg-slate-700 p-4 text-gray-50 flex flex-col items-center justify-center gap-1 container">
-        <div className="mb-4 flex justify-between items-center container">
+      <section className="bg-slate-700 p-4 text-gray-50 flex flex-col items-center justify-center gap-1">
+        <div className="mb-4 flex justify-between items-center">
           <h2 className="font-bold">{focus.rover.toUpperCase()} latest photos:</h2>
           <svg
             onClick={() => {
@@ -137,7 +137,7 @@ export default function MarsRovers() {
             <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
           </svg>
         </div>
-        <ul className="self-start container flex flex-wrap justify-center items-center gap-4">
+        <ul className="self-start flex flex-wrap justify-center items-center gap-4">
           {data != undefined &&
             data.latest_photos.map((photo, index) => (
               <li key={index}>

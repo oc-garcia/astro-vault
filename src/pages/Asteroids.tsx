@@ -51,7 +51,7 @@ export default function Asteroids() {
       <h2>Asteroids - NeoWs</h2>
       <p>Near Earth Object Web Service</p>
       {asteroids !== defaultValue ? (
-        <ul className="self-start container flex flex-wrap justify-center items-center gap-2">
+        <ul className="self-start flex flex-wrap justify-center items-center gap-2">
           {asteroids.map(({ asteroid }, index) => (
             <AsteroidCard asteroid={asteroid} key={index} />
           ))}

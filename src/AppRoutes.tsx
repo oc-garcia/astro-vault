@@ -10,17 +10,19 @@ import NotFound from "./pages/NotFound";
 export default function AppRoutes() {
   return (
     <BrowserRouter>
-      <Header />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/apod" element={<Apod />} />
-          <Route path="/marsrovers" element={<MarsRovers />} />
-          <Route path="/asteroids" element={<Asteroids />} />
-          <Route path="/*" element={<NotFound />} />
-        </Routes>
-      </main>
-      <Footer />
+      <div className="container">
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/apod" element={<Apod />} />
+            <Route path="/marsrovers" element={<MarsRovers />} />
+            <Route path="/asteroids" element={<Asteroids />} />
+            <Route path="/*" element={<NotFound />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }
